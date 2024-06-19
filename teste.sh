@@ -57,36 +57,36 @@ uptime
 # Inicia a monitoração de desempenho em segundo plano
 monitor_performance &
 
-# Executa 8 estressores de CPU por 3 minutos e atualiza o RRD
-echo "Executando 8 estressores de CPU por 3 minutos:"
-sudo stress-ng --cpu 8 --timeout 3m --metrics-brief
+# Executa 64 estressores de CPU por 2 minutos e atualiza o RRD
+echo "Executando 64 estressores de CPU por 2 minutos:"
+sudo stress-ng --cpu 64 --timeout 2m --metrics-brief
 update_rrd  # Atualiza o RRD após o teste de estresse
 
 # Exibe o tempo de atividade novamente após o primeiro teste
 echo "Tempo de atividade após o primeiro teste:"
 uptime
 
-# Executa 4 estressores de CPU com método FFT por 3 minutos e atualiza o RRD
-echo "Executando 4 estressores de CPU com método FFT por 3 minutos:"
-sudo stress-ng --cpu 4 --cpu-method fft --timeout 3m --metrics-brief
+# Executa 32 estressores de CPU com método FFT por 2 minutos e atualiza o RRD
+echo "Executando 32 estressores de CPU com método FFT por 2 minutos:"
+sudo stress-ng --cpu 32 --cpu-method fft --timeout 2m --metrics-brief
 update_rrd  # Atualiza o RRD após o teste de estresse
 
 # Exibe o tempo de atividade novamente após o segundo teste
 echo "Tempo de atividade após o segundo teste:"
 uptime
 
-# Executa 10 estressores de memória virtual com 2GB por 3 minutos e atualiza o RRD
-echo "Executando 10 estressores de memória virtual (2GB) por 3 minutos:"
-sudo stress-ng --vm 10 --vm-bytes 2G --timeout 3m --metrics-brief
+# Executa 64 estressores de memória virtual com 4GB por 2 minutos e atualiza o RRD
+echo "Executando 64 estressores de memória virtual (4GB) por 2 minutos:"
+sudo stress-ng --vm 64 --vm-bytes 4G --timeout 2m --metrics-brief
 update_rrd  # Atualiza o RRD após o teste de estresse de memória
 
 # Exibe o tempo de atividade novamente após o terceiro teste
 echo "Tempo de atividade após o terceiro teste:"
 uptime
 
-# Executa 16 estressores de CPU e 8 estressores de memória virtual com 2GB por 3 minutos e atualiza o RRD
-echo "Executando 16 estressores de CPU e 8 estressores de memória virtual (2GB) por 3 minutos:"
-sudo stress-ng --cpu 16 --vm 8 --vm-bytes 2G --timeout 3m --metrics-brief
+# Executa 128 estressores de CPU e 64 estressores de memória virtual com 4GB por 2 minutos e atualiza o RRD
+echo "Executando 128 estressores de CPU e 64 estressores de memória virtual (4GB) por 2 minutos:"
+sudo stress-ng --cpu 128 --vm 64 --vm-bytes 4G --timeout 2m --metrics-brief
 update_rrd  # Atualiza o RRD após o teste de estresse
 
 # Exibe o tempo de atividade novamente após o quarto teste
